@@ -1,0 +1,4 @@
+useDynLib(glmlep)
+
+
+export(glmlep, cv.glmlep)

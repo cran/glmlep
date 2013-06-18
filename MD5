@@ -1,0 +1,14 @@
+3e8e5a9712819eeff62172b1a90a5749 *DESCRIPTION
+48ef6254dd177f989e3f0bfb443e6097 *NAMESPACE
+e55140d5313c78a1537d3b4388cf90cd *R/SetLambda.R
+7aedd103b95008d014507d851c935fa7 *R/cv.glmlep.R
+ace307c241aa63e44a1b37a3cc9ab016 *R/glmlep.R
+60bbbeb8686a9e54375a29273f30a3ad *R/loglike.R
+cc0ffb9390692ed26edeb9c4125585ed *R/soft.R
+5ba001f18f9137bc316a61a0de4cff40 *man/SetLambda.Rd
+ba80fbfe6e65a6547397a496db808a1c *man/cv.glmlep.Rd
+0a91c108d7399554c1caee8ba64362b3 *man/glmlep-package.Rd
+6c7df0cc2d4fed800a946219425286a3 *man/glmlep.Rd
+37bbf8fb33722ce7aa0e94e8ac68d893 *man/loglike.Rd
+76403657af7ca6dd5eb0d259df5c439a *man/soft.Rd
+5c1ad7a3182c0dfea51db61888d16d42 *src/LEP.cpp
