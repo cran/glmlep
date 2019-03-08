@@ -92,13 +92,7 @@ noise=rnorm(n);
 y <- tcrossprod(x,t(beta)) + noise;
 fit <- glmlep(x,y,family="gaussian")
 
-## Binomial
-pr <- exp(tcrossprod(x,t(beta)))/(1+ exp(tcrossprod(x,t(beta))))
-y <- rbinom(n,size=1,pr)
-fit <- glmlep(x,y,family="binomial")
-
 }
-
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{ LEP }

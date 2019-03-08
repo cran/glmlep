@@ -36,10 +36,10 @@ function(x, y, family = c("gaussian", "binomial"), lambda=NULL,
     beta = switch(family, 
                   gaussian = sapply(1:length(ls), function(i) .C("gaulep",as.double(x),as.double(y),as.double(ls[i]),
                                                                  as.double(kappa),as.double(tol),as.integer(max.ite),
-                                                                 as.integer(n),as.integer(p),as.double(beta0),DUP=FALSE)[[9]]),
+                                                                 as.integer(n),as.integer(p),as.double(beta0))[[9]]),
                   binomial = sapply(1:length(ls), function(i) .C("binlep",as.double(x),as.double(y),as.double(ls[i]),
                                                                  as.double(kappa),as.double(tol),as.integer(max.ite),
-                                                                 as.integer(n),as.integer(p),as.double(beta0),DUP=FALSE)[[9]]))
+                                                                 as.integer(n),as.integer(p),as.double(beta0))[[9]]))
     
     
     ## using cross validation to choose lambda
@@ -57,10 +57,10 @@ function(x, y, family = c("gaussian", "binomial"), lambda=NULL,
       betaj = switch(family, 
                     gaussian = sapply(1:nlambda, function(i) .C("gaulep",as.double(train.x),as.double(train.y),as.double(ls[i]),
                                                                    as.double(kappa),as.double(tol),as.integer(max.ite),
-                                                                   as.integer(nj),as.integer(p),as.double(beta0),DUP=FALSE)[[9]]),
+                                                                   as.integer(nj),as.integer(p),as.double(beta0))[[9]]),
                     binomial = sapply(1:nlambda, function(i) .C("binlep",as.double(train.x),as.double(train.y),as.double(ls[i]),
                                                                    as.double(kappa),as.double(tol),as.integer(max.ite),
-                                                                   as.integer(nj),as.integer(p),as.double(beta0),DUP=FALSE)[[9]]))
+                                                                   as.integer(nj),as.integer(p),as.double(beta0))[[9]]))
       loss[,j] <- sapply(1:nlambda, function(i)loglike(test.x, test.y, beta=betaj[,i], family))
 
     }

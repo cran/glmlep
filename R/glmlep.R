@@ -31,10 +31,10 @@ function(x, y, family = c("gaussian", "binomial"), lambda=NULL,
   beta = switch(family, 
                 gaussian = sapply(1:length(ls), function(i) .C("gaulep",as.double(x),as.double(y),as.double(ls[i]),
                                                                as.double(kappa),as.double(tol),as.integer(max.ite),
-                                                               as.integer(n),as.integer(p),as.double(beta0),DUP=FALSE)[[9]]),
+                                                               as.integer(n),as.integer(p),as.double(beta0))[[9]]),
                 binomial = sapply(1:length(ls), function(i) .C("binlep",as.double(x),as.double(y),as.double(ls[i]),
                                                                as.double(kappa),as.double(tol),as.integer(max.ite),
-                                                               as.integer(n),as.integer(p),as.double(beta0),DUP=FALSE)[[9]]))
+                                                               as.integer(n),as.integer(p),as.double(beta0))[[9]]))
   
   
   ## choose the one giving the minimum BIC value.
